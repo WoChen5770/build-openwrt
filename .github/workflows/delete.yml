@@ -22,8 +22,8 @@ on:
         required: false
         default: 'true'           #删除旧的发布（true=开启）（false=关闭）
 
-#  schedule:
-#    - cron: 0 8 */5 * *
+  schedule:
+    - cron: 0 21 */7 * *
 
 jobs:
   del_runs:
@@ -44,7 +44,7 @@ jobs:
         uses: dev-drprasad/delete-older-releases@v0.1.0
         if: (github.event.inputs.delete-older-releases == 'true' && github.event.inputs.delete-older-releases  != 'false')
         with:
-          keep_latest: 0         #保留多少个发布不删除
+          keep_latest: 3         #保留多少个发布不删除
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
