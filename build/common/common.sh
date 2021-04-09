@@ -54,7 +54,9 @@ git clone https://github.com/vernesong/OpenClash package/danshui/luci-app-opencl
 git clone https://github.com/frainzy1477/luci-app-clash package/danshui/luci-app-clash
 git clone https://github.com/garypang13/luci-app-bypass package/danshui/luci-app-bypass
 rm -rf package/danshui/adguardhome
-git clone https://github.com/WoChen5770/AdGuardHome package/danshui
+git clone https://github.com/WoChen5770/AdGuardHome package/AdGuardHome/
+cp -Rf package/AdGuardHome/adguardhome/* package/AdGuardHome/
+rm -rf package/AdGuardHome/adguardhome
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 }
