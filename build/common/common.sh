@@ -75,7 +75,7 @@ sed -i '/exit 0/i\echo "*/3 * * * * chmod +x /etc/webweb.sh && source /etc/webwe
 ################################################################################################################
 Diy_lienol() {
 DIY_GET_COMMON_SH
-rm -rf package/diy/luci-app-adguardhome
+# rm -rf package/diy/luci-app-adguardhome
 rm -rf package/lean/{luci-app-netdata,luci-theme-argon,k3screenctrl}
 git clone https://github.com/fw876/helloworld package/danshui/luci-app-ssr-plus
 git clone https://github.com/xiaorouji/openwrt-passwall package/danshui/luci-app-passwall
