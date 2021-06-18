@@ -44,12 +44,6 @@ sed -i '/IMAGES_GZIP/d' "${PATH1}/${CONFIG_FILE}" > /dev/null 2>&1
 echo -e "\nCONFIG_TARGET_IMAGES_GZIP=y" >> "${PATH1}/${CONFIG_FILE}"
 fi
 
-git clone https://github.com/fw876/helloworld package/WoChen5770/luci-app-ssr-plus
-git clone https://github.com/xiaorouji/openwrt-passwall package/WoChen5770/luci-app-passwall
-git clone https://github.com/jerrykuku/luci-app-vssr package/WoChen5770/luci-app-vssr
-git clone https://github.com/vernesong/OpenClash package/WoChen5770/luci-app-openclash
-git clone https://github.com/frainzy1477/luci-app-clash package/WoChen5770/luci-app-clash
-git clone https://github.com/garypang13/luci-app-bypass package/WoChen5770/luci-app-bypass
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 }
@@ -70,12 +64,6 @@ Diy_lienol() {
 DIY_GET_COMMON_SH
 # rm -rf package/diy/luci-app-adguardhome
 rm -rf package/lean/{luci-app-netdata,luci-theme-argon,k3screenctrl}
-git clone https://github.com/fw876/helloworld package/WoChen5770/luci-app-ssr-plus
-git clone https://github.com/xiaorouji/openwrt-passwall package/WoChen5770/luci-app-passwall
-git clone https://github.com/jerrykuku/luci-app-vssr package/WoChen5770/luci-app-vssr
-git clone https://github.com/vernesong/OpenClash package/WoChen5770/luci-app-openclash
-git clone https://github.com/frainzy1477/luci-app-clash package/WoChen5770/luci-app-clash
-git clone https://github.com/garypang13/luci-app-bypass package/WoChen5770/luci-app-bypass
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 }
