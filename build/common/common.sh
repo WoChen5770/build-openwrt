@@ -24,9 +24,6 @@ fi
 # 全脚本源码通用diy2.sh文件
 Diy_all2() {
 DIY_GET_COMMON_SH
-if [ -n "$(ls -A "${Home}/package/danshui/ddnsto" 2>/dev/null)" ]; then
-mv package/danshui/ddnsto package/network/services
-fi
 if [[ `grep -c "# CONFIG_PACKAGE_ddnsto is not set" "${PATH1}/${CONFIG_FILE}"` -eq '0' ]]; then
 sed -i '/CONFIG_PACKAGE_ddnsto/d' "${PATH1}/${CONFIG_FILE}" > /dev/null 2>&1
 echo -e "\nCONFIG_PACKAGE_ddnsto=y" >> "${PATH1}/${CONFIG_FILE}"
@@ -47,16 +44,12 @@ sed -i '/IMAGES_GZIP/d' "${PATH1}/${CONFIG_FILE}" > /dev/null 2>&1
 echo -e "\nCONFIG_TARGET_IMAGES_GZIP=y" >> "${PATH1}/${CONFIG_FILE}"
 fi
 
-git clone https://github.com/fw876/helloworld package/danshui/luci-app-ssr-plus
-git clone https://github.com/xiaorouji/openwrt-passwall package/danshui/luci-app-passwall
-git clone https://github.com/jerrykuku/luci-app-vssr package/danshui/luci-app-vssr
-git clone https://github.com/vernesong/OpenClash package/danshui/luci-app-openclash
-git clone https://github.com/frainzy1477/luci-app-clash package/danshui/luci-app-clash
-git clone https://github.com/garypang13/luci-app-bypass package/danshui/luci-app-bypass
-rm -rf package/danshui/adguardhome
-git clone https://github.com/WoChen5770/AdGuardHome package/AdGuardHome/
-cp -Rf package/AdGuardHome/adguardhome/* package/AdGuardHome/
-rm -rf package/AdGuardHome/adguardhome
+git clone https://github.com/fw876/helloworld package/WoChen5770/luci-app-ssr-plus
+git clone https://github.com/xiaorouji/openwrt-passwall package/WoChen5770/luci-app-passwall
+git clone https://github.com/jerrykuku/luci-app-vssr package/WoChen5770/luci-app-vssr
+git clone https://github.com/vernesong/OpenClash package/WoChen5770/luci-app-openclash
+git clone https://github.com/frainzy1477/luci-app-clash package/WoChen5770/luci-app-clash
+git clone https://github.com/garypang13/luci-app-bypass package/WoChen5770/luci-app-bypass
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 }
@@ -77,16 +70,12 @@ Diy_lienol() {
 DIY_GET_COMMON_SH
 # rm -rf package/diy/luci-app-adguardhome
 rm -rf package/lean/{luci-app-netdata,luci-theme-argon,k3screenctrl}
-git clone https://github.com/fw876/helloworld package/danshui/luci-app-ssr-plus
-git clone https://github.com/xiaorouji/openwrt-passwall package/danshui/luci-app-passwall
-git clone https://github.com/jerrykuku/luci-app-vssr package/danshui/luci-app-vssr
-git clone https://github.com/vernesong/OpenClash package/danshui/luci-app-openclash
-git clone https://github.com/frainzy1477/luci-app-clash package/danshui/luci-app-clash
-git clone https://github.com/garypang13/luci-app-bypass package/danshui/luci-app-bypass
-rm -rf package/danshui/adguardhome
-git clone https://github.com/WoChen5770/AdGuardHome package/AdGuardHome/
-cp -Rf package/AdGuardHome/adguardhome/* package/AdGuardHome/
-rm -rf package/AdGuardHome/adguardhome
+git clone https://github.com/fw876/helloworld package/WoChen5770/luci-app-ssr-plus
+git clone https://github.com/xiaorouji/openwrt-passwall package/WoChen5770/luci-app-passwall
+git clone https://github.com/jerrykuku/luci-app-vssr package/WoChen5770/luci-app-vssr
+git clone https://github.com/vernesong/OpenClash package/WoChen5770/luci-app-openclash
+git clone https://github.com/frainzy1477/luci-app-clash package/WoChen5770/luci-app-clash
+git clone https://github.com/garypang13/luci-app-bypass package/WoChen5770/luci-app-bypass
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 }
@@ -109,7 +98,7 @@ Diy_immortalwrt() {
 DIY_GET_COMMON_SH
 rm -rf package/lienol/luci-app-timecontrol
 rm -rf package/lean/luci-theme-argon
-git clone https://github.com/garypang13/luci-app-bypass package/danshui/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-bypass package/WoChen5770/luci-app-bypass
 }
 
 ################################################################################################################
